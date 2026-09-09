@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pihu 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdce6, #fff1f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: floatUp 7s linear infinite;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main card */
+.card {
+    width: 92%;
+    max-width: 430px;
+    min-height: 620px;
+    margin: 30px 0;
+    padding: 25px 20px;
+    background: rgba(255, 245, 248, .94);
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(170, 60, 90, .20);
+    position: relative;
+    z-index: 2;
+}
+
+/* Name */
+.name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f04478;
+    margin-bottom: 18px;
+}
+
+.name span {
+    display: inline-block;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+/* Cute picture area */
+.cute {
+    width: 205px;
+    height: 175px;
+    margin: 15px auto 25px;
+    background: white;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.10);
+}
+
+h1 {
+    font-size: 29px;
+    color: #111;
+    margin: 15px 0;
+}
+
+p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.small {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+    min-height: 80px;
+}
+
+button {
+    border: none;
+    background: white;
+    color: #222;
+    padding: 13px 30px;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,.13);
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* Hide screens */
+.hidden {
+    display: none;
+}
+
+/* Final screen */
+.final {
+    animation: pop .7s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.big-heart {
+    font-size: 65px;
+    animation: heartbeat 1.2s infinite;
+    margin: 20px 0;
+}
+
+/* ---------------------------
+   FLOWER BOUQUET
+---------------------------- */
+
+.flowers {
+    margin-top: 25px;
+    position: relative;
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bouquet {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 180px;
+}
+
+/* Stems */
+.stem {
+    position: absolute;
+    width: 5px;
+    height: 125px;
+    background: #4d8b50;
+    bottom: 48px;
+    left: 50%;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+
+.stem1 {
+    transform: rotate(-28deg);
+}
+
+.stem2 {
+    transform: rotate(-12deg);
+}
+
+.stem3 {
+    transform: rotate(10deg);
+}
+
+.stem4 {
+    transform: rotate(27deg);
+}
+
+/* Roses */
+.rose {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 50%,
+        #ffb0bd 0 10%,
+        #e83e61 11% 25%,
+        #ff7992 26% 39%,
+        #d9254d 40% 55%,
+        #ff6b86 56% 70%,
+        #c91e45 71% 100%);
+    box-shadow:
+        inset 5px 5px 12px rgba(255,255,255,.35),
+        inset -7px -7px 15px rgba(100,0,20,.18),
+        0 5px 12px rgba(80,0,20,.2);
+}
+
+.rose:before,
+.rose:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,.2);
+}
+
+.rose:before {
+    inset: 10px;
+}
+
+.rose:after {
+    inset: 19px;
+}
+
+.r1 {
+    left: 82px;
+    top: 20px;
+    transform: scale(1.05);
+}
+
+.r2 {
+    left: 35px;
+    top: 65px;
+    transform: scale(.82);
+}
+
+.r3 {
+    right: 32px;
+    top: 63px;
+    transform: scale(.9);
+}
+
+.r4 {
+    left: 72px;
+    top: 88px;
+    transform: scale(.72);
+}
+
+.r5 {
+    right: 65px;
+    top: 92px;
+    transform: scale(.75);
+}
+
+/* Leaves */
+.leaf {
+    position: absolute;
+    width: 48px;
+    height: 23px;
+    background: linear-gradient(135deg,#6fa96d,#286638);
+    border-radius: 100% 0 100% 0;
+    bottom: 65px;
+}
+
+.l1 {
+    left: 25px;
+    transform: rotate(25deg);
+}
+
+.l2 {
+    right: 20px;
+    transform: rotate(-25deg);
+}
+
+.l3 {
+    left: 55px;
+    bottom: 40px;
+    transform: rotate(-25deg);
+}
+
+.l4 {
+    right: 50px;
+    bottom: 42px;
+    transform: rotate(30deg);
+}
+
+/* Bouquet wrapper */
+.wrapper {
+    position: absolute;
+    width: 205px;
+    height: 105px;
+    left: 12px;
+    bottom: 0;
+    background: linear-gradient(
+        145deg,
+        #ff9ab1,
+        #ff668a,
+        #e94269
+    );
+    clip-path: polygon(
+        10% 0,
+        90% 0,
+        75% 100%,
+        25% 100%
+    );
+    box-shadow: 0 8px 20px rgba(120,20,50,.2);
+}
+
+/* Ribbon */
+.ribbon {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    width: 55px;
+    height: 28px;
+    transform: translateX(-50%);
+    background: #ff315f;
+    border-radius: 50%;
+}
+
+.ribbon:before,
+.ribbon:after {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 28px;
+    background: #ff5278;
+    top: 0;
+}
+
+.ribbon:before {
+    right: 28px;
+    transform: rotate(25deg);
+    border-radius: 10px 30px 30px 10px;
+}
+
+.ribbon:after {
+    left: 28px;
+    transform: rotate(-25deg);
+    border-radius: 30px 10px 10px 30px;
+}
+
+/* Petals */
+.petal {
+    position: absolute;
+    width: 15px;
+    height: 9px;
+    background: #e82d51;
+    border-radius: 100% 0;
+    bottom: 8px;
+}
+
+.p1 { left: 20px; transform: rotate(20deg); }
+.p2 { left: 55px; transform: rotate(-25deg); }
+.p3 { right: 30px; transform: rotate(30deg); }
+.p4 { right: 70px; transform: rotate(-20deg); }
+
+.flower-title {
+    font-size: 18px;
+    color: #d72d57;
+    font-weight: bold;
+    margin-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:5%;animation-delay:0s;">💗</div>
+<div class="heart" style="left:18%;animation-delay:2s;">❤️</div>
+<div class="heart" style="left:32%;animation-delay:4s;">💕</div>
+<div class="heart" style="left:48%;animation-delay:1s;">💖</div>
+<div class="heart" style="left:65%;animation-delay:3s;">💗</div>
+<div class="heart" style="left:80%;animation-delay:5s;">❤️</div>
+<div class="heart" style="left:92%;animation-delay:1.5s;">💕</div>
+
+
+<div class="card">
+
+    <!-- NAME -->
+    <div class="name">
+        Pihu <span>💗</span>
+    </div>
+
+
+    <!-- SCREEN 1 -->
+    <div id="screen1">
+
+        <div class="cute">
+            🥺
+        </div>
+
+        <h1>
+            Do you like me? 😊
+        </h1>
+
+        <p>
+            Pihu, I wanted to ask you something... 💕
+        </p>
+
+        <p class="small">
+            Please answer honestly 🥹
+        </p>
+
+        <div class="buttons">
+
+            <button onclick="showFinal()">
+                Yes 💕
+            </button>
+
+            <button id="no1" onclick="screenTwo()">
+                No 😶
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 2 -->
+    <div id="screen2" class="hidden">
+
+        <div class="cute">
+            🥹
+        </div>
+
+        <h1>
+            Please think again! 🙈
+        </h1>
+
+        <p>
+            Itni jaldi answer mat do 😭
+        </p>
+
+        <p>
+            Ek baar aur soch lo... 💗
+        </p>
+
+        <div class="buttons">
+
+            <button onclick="showFinal()">
+                Yes 💗
+            </button>
+
+            <button id="no2" onclick="screenThree()">
+                No 😭
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 3 -->
+    <div id="screen3" class="hidden">
+
+        <div class="cute">
+            😢💗
+        </div>
+
+        <h1>
+            Ek aur baar soch lo! 🥺
+        </h1>
+
+        <p>
+            Pihu, give it one more thought 💕
+        </p>
+
+        <div class="buttons">
+
+            <button onclick="showFinal()">
+                Yes ❤️
+            </button>
+
+            <button id="no3" onclick="moveNo('no3')">
+                No 🙃
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL SCREEN -->
+    <div id="final" class="hidden final">
+
+        <div class="cute">
+            🥰
+        </div>
+
+        <h1>
+            Yayyy! 💕
+        </h1>
+
+        <p>
+            Thank you, Pihu! ❤️
+        </p>
+
+        <p>
+            You just made this little website very happy. 🌸
+        </p>
+
+        <div class="big-heart">
+            💗
+        </div>
+
+        <p>
+            Made specially for Pihu ✨
+        </p>
+
+
+        <!-- FLOWERS -->
+        <div class="flowers">
+
+            <div class="flower-title">
+                🌹 A little bouquet for you 🌹
+            </div>
+
+            <div class="bouquet">
+
+                <div class="stem stem1"></div>
+                <div class="stem stem2"></div>
+                <div class="stem stem3"></div>
+                <div class="stem stem4"></div>
+
+                <div class="leaf l1"></div>
+                <div class="leaf l2"></div>
+                <div class="leaf l3"></div>
+                <div class="leaf l4"></div>
+
+                <div class="rose r1"></div>
+                <div class="rose r2"></div>
+                <div class="rose r3"></div>
+                <div class="rose r4"></div>
+                <div class="rose r5"></div>
+
+                <div class="wrapper"></div>
+
+                <div class="ribbon"></div>
+
+                <div class="petal p1"></div>
+                <div class="petal p2"></div>
+                <div class="petal p3"></div>
+                <div class="petal p4"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* YES button */
+function showFinal() {
+
+    document.getElementById("screen1").classList.add("hidden");
+    document.getElementById("screen2").classList.add("hidden");
+    document.getElementById("screen3").classList.add("hidden");
+
+    document.getElementById("final").classList.remove("hidden");
+}
+
+
+/* First NO */
+function screenTwo() {
+
+    moveNo("no1");
+
+    setTimeout(function() {
+
+        document.getElementById("screen1").classList.add("hidden");
+        document.getElementById("screen2").classList.remove("hidden");
+
+    }, 600);
+}
+
+
+/* Second NO */
+function screenThree() {
+
+    moveNo("no2");
+
+    setTimeout(function() {
+
+        document.getElementById("screen2").classList.add("hidden");
+        document.getElementById("screen3").classList.remove("hidden");
+
+    }, 600);
+}
+
+
+/* Moving NO button */
+function moveNo(id) {
+
+    const button = document.getElementById(id);
+
+    const x = Math.floor(Math.random() * 220) - 110;
+    const y = Math.floor(Math.random() * 160) - 80;
+
+    button.style.transform =
+        "translate(" + x + "px, " + y + "px)";
+}
+
+</script>
+
+</body>
+  </html>
